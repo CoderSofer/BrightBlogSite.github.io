@@ -1,0 +1,138 @@
+
+
+body{
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	font-size: 1.5vw;
+}
+
+#logo{
+	margin: 0px;
+	padding: 8px;
+	font-family: "Fredoka One", sans-serif;
+	/* Shadow around circle */
+	box-shadow: 8px 8px 10px 3px rgb(182, 105, 18);
+	width: 16%;
+	border-radius: 50%;
+	/* Shadow around text */
+	text-shadow: 
+        1px 1px 0px black,  /* Bottom-right */
+        -1px -1px 0px black, /* Top-left */
+        -1px 1px 0px black,  /* Bottom-left */
+        1px -1px 0px black;  /* Top-right */
+
+}
+
+ul{
+	margin: 0px;
+}
+
+body > header{
+	/* This is the same as #main-header */
+	background-color: orange;
+	color: white;
+	/* Make logo and top links next to each other */
+	display: flex;
+	height: 11vh;
+	/* Make vertically centred */
+	align-items: center;
+	/* Space between top */
+	justify-content: space-between;
+}
+
+/* Same as #nav-ul */
+body > header > nav > ul{
+	/* No bullet icons */
+	list-style: none;
+	/* Make top links next to each other */
+	display: flex;
+
+}
+
+#nav-ul > li{
+	padding: 8px;
+	margin: 5px;
+
+}
+
+.navbutton{
+	color:white;
+	/* No underline */
+	text-decoration: none;
+	/* Make button clickable area bigger */
+	padding: 12px;
+	/* Make border for where you can click buttons */
+	border: 1px solid white;
+	/* Make border rounded */
+	border-radius: 10%;
+
+}
+
+body > main article{
+	width: 100%;
+	margin: auto;
+}
+
+#main-content{
+	display: flex;
+	justify-content: space-around;
+}
+
+#main-content > div {
+	width: 60%;
+	margin: 3% 0% 0% 0%;
+
+
+}
+
+#main-content > aside{
+
+	margin: 10% 0% 1% 0%;
+	/* padding: 7% 1% 5% 1%; */
+
+}
+
+
+form{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+body > footer{
+	background-color: orange;
+		/* Make end footer links next to each other */
+		display: flex;
+
+
+}
+
+#footer-ul{
+	/* Make end footer links in two columns */
+	display: flex;
+	/* Destroy bullet point icons */
+	list-style: none;
+
+}
+
+#footer-ul > div > li{
+	margin-left: 12px;
+
+}
+
+/* Need to overwrite the a tag properties */
+#footer-ul > div > li > a{
+	/* Remove underline */
+	text-decoration: none;
+	/* Make white */
+	color: white;
+
+}
+
+
+img{
+	border-radius: 50%;
+}
