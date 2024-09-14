@@ -24,28 +24,36 @@
 
 
 <body class="bodyClass">
-	<!-- Container to make grid cover whole of body -->
-	<div class="indexContainer">
-
-		<!-- Grid method to layout index page -->
-		<div class="indexGrid">
-
-			<!-- Top left title -->
-			<h1 class="mainTitle">
-				<div>Computing </div>
-				<div> Quiz</div>
-			</h1>
-
-			<!-- Line -->
-			<div class="horizontalLine lightCol">
-				<p class="lightCol"></p>
+	<!-- Navbar -->
+	<header class="main-header">
+		<!-- top nav bar using bootstrap-->
+		<nav class="navbar navbar-expand-sm navBar">
+			<div class="container-fluid">
+				<a class=" navText " href="index.html">Computing Quiz</a>
 			</div>
+		</nav>
+		<p class="headyline text-center"></p>
+	</header>
 
-			<!-- Start button -->
-			<a href="quiz.html" class="startButton">
-				<!-- Play icon from Font Awesome -->
-				<i class="fa-solid fa-play"></i>
-			</a>
+	<!-- Container for qn flexboxes -->
+	<div class="quizContainer">
+
+		<!-- Flex method to layout quiz page -->
+		<div class="quizFlex">
+
+			<article>
+				<h2 class="question">What does CPU stand for?</h2>
+				<div class="answers">
+					<ul>
+						<li>Central Processing Unit</li>
+						<li>Centre of Pain Universally</li>
+						<li>Cup Plant Under</li>
+						<li>Central Data Universe</li>
+					</ul>
+				</div>
+			</article>
+
+
 		</div>
 	</div>
 

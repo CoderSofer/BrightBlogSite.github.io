@@ -1,138 +1,160 @@
+/* GENERAL */
 
-
-body{
-	background-color: white;
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0px;
-	font-size: 1.5vw;
+/* IMPORTING CUSTOM FONT VIRGIL */
+@font-face {
+    font-family: 'virgil'; /* Give font a name */
+    src: url('Virgil.woff2') format('woff2'); /* Path to your WOFF file */
+    font-weight: normal; /* Specify font weight */
+    font-style: normal; /* Specify font style */
 }
 
-#logo{
-	margin: 0px;
-	padding: 8px;
-	font-family: "Fredoka One", sans-serif;
-	/* Shadow around circle */
-	box-shadow: 8px 8px 10px 3px rgb(182, 105, 18);
-	width: 16%;
-	border-radius: 50%;
-	/* Shadow around text */
-	text-shadow: 
-        1px 1px 0px black,  /* Bottom-right */
-        -1px -1px 0px black, /* Top-left */
-        -1px 1px 0px black,  /* Bottom-left */
-        1px -1px 0px black;  /* Top-right */
+/* For all footers basic design */
+.page-footer {
+	background-color: rgba(0, 0, 0, 0.861);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-decoration: none;
 
 }
 
-ul{
-	margin: 0px;
-}
-
-body > header{
-	/* This is the same as #main-header */
-	background-color: orange;
+/* Make links in footers ( images) not have underlines and not be blue */
+.page-footer>a {
+	text-decoration: none;
 	color: white;
-	/* Make logo and top links next to each other */
+}
+
+/* Making background colour for all pages */
+.bodyClass{
+	background-color: #1F3B4D	;
+	font-family: 'virgil', sans-serif;
+	font-size: 2.5vw;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* PAGE SPECIFIC */
+
+/* INDEX */
+
+/* Change play button aesthetics*/
+.fa-play {
+	color: #D0FEFE;
+}
+
+/* Title */
+.mainTitle {
+	/* Make part of grid */
+	grid-area: mainTitle;
+	font-size: clamp(80px, 12vw, 170px);
+	padding-bottom: 0px;
+	/* Make it flexbox so it goes on two lines */
 	display: flex;
-	height: 11vh;
-	/* Make vertically centred */
+	margin: 1%;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: center; /* Space out children */
+	height: clamp(1em, 12vw, 30em);; /* Full viewport height */
+	justify-items: center;
+	padding-bottom: 10vh;
+	color: #D0FEFE;
+
+}
+
+/* Title colour */
+.mainTitle>div{
+	background-color: #017374;
+	
+}
+
+
+/* Line across */
+.horizontalLine {
+	/* Make part of grid */
+	grid-area: horizontalLine;
+	background-color: #D0FEFE;
+	justify-items: stretch;
+	height: 8vh; /* Set height of the line */
+    width: 100%; /* Make it full width */
+    margin: 20px 0;
+	padding-bottom: 10vh;
+}
+
+.lightCol{
+	background-color: #D0FEFE;
+}
+
+/* Start button */
+.startButton {
+	/*Make part of grid  */
+	grid-area: startButton;
+	font-size: clamp(80px, 10vw, 360px);
+}
+
+/* grid on index page */
+.indexGrid{
+	
+	/* Make grid */
+	display: grid;
+	/* Format of grid */
+	grid-template-areas:
+	'mainTitle'
+	'horizontalLine'
+	'startButton';
+	/* Make grid items horizontally centered */
+	justify-items: center;
+	/* Make sure padding is included in the total width and height of elements */
+	box-sizing: border-box;
+	align-items:center;
+	gap: 5px; /* Space between grid items */
+    width: 100%; /* Set width to 100% or specify a larger size */
+    height: auto; /* Adjust height as needed */
+
+}
+
+/* Container CSS to make sure grid takes all of the body */
+.indexContainer {
+	/* Turn into flexbox */
+	display: flex;
+	flex-direction: column; /* Stack children vertically */
+	justify-content: space-between; /* Space out children */
+	height: 100vh; /* Full viewport height */
+}
+
+
+/* QUIZPAGE */
+
+/* NAVIGATION */
+.navBar{
+	background-color: #017374;
+	font-size: 2.5vw;
+	color: #D0FEFE;
+}
+
+.navText{
+	color: #D0FEFE;
+	text-decoration: none;
+	font-size: 2.5vw;
+}
+
+/* Under nav */
+.headyline{
+	height: 1vh; 
+    width: 100%; 
+    margin-bottom: 2vh;
+	padding-bottom: 2vh;
+	padding-top: 0;
+	background-color: #D0FEFE;
+	font-size: 2.5vw;
+
+}
+
+/* Quiz blocks */
+
+.quizFlex{
+	display: flex;
 	align-items: center;
-	/* Space between top */
-	justify-content: space-between;
-}
-
-/* Same as #nav-ul */
-body > header > nav > ul{
-	/* No bullet icons */
-	list-style: none;
-	/* Make top links next to each other */
-	display: flex;
-
-}
-
-#nav-ul > li{
-	padding: 8px;
-	margin: 5px;
-
-}
-
-.navbutton{
-	color:white;
-	/* No underline */
-	text-decoration: none;
-	/* Make button clickable area bigger */
-	padding: 12px;
-	/* Make border for where you can click buttons */
-	border: 1px solid white;
-	/* Make border rounded */
-	border-radius: 10%;
-
-}
-
-body > main article{
-	width: 100%;
-	margin: auto;
-}
-
-#main-content{
-	display: flex;
-	justify-content: space-around;
-}
-
-#main-content > div {
-	width: 60%;
-	margin: 3% 0% 0% 0%;
-
-
-}
-
-#main-content > aside{
-
-	margin: 10% 0% 1% 0%;
-	/* padding: 7% 1% 5% 1%; */
-
-}
-
-
-form{
-	text-align: center;
-}
-
-h2{
-	text-align: center;
-}
-
-body > footer{
-	background-color: orange;
-		/* Make end footer links next to each other */
-		display: flex;
-
-
-}
-
-#footer-ul{
-	/* Make end footer links in two columns */
-	display: flex;
-	/* Destroy bullet point icons */
-	list-style: none;
-
-}
-
-#footer-ul > div > li{
-	margin-left: 12px;
-
-}
-
-/* Need to overwrite the a tag properties */
-#footer-ul > div > li > a{
-	/* Remove underline */
-	text-decoration: none;
-	/* Make white */
-	color: white;
-
-}
-
-
-img{
-	border-radius: 50%;
+	align-content:center;
+	height: 100vh;
+	justify-content: center;
 }
