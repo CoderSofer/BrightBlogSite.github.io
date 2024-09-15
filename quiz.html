@@ -1,3 +1,4 @@
+<!-- For reference, I used https://dev.to/sulaimonolaniran/building-a-simple-quiz-with-html-css-and-javascript-4elp a lot to help with the layout and function of the quiz-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +10,9 @@
 
 	<!-- Linking CSS -->
 	<link rel="stylesheet" href="style.css">
+
+	<!-- Linking js -->
+	<script src="app.js"></script>
 
 	<!-- Getting bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,31 +35,104 @@
 			<div class="container-fluid">
 				<a class=" navText " href="index.html">Computing Quiz</a>
 			</div>
+
 		</nav>
+		<!-- Light line across -->
 		<p class="headyline text-center"></p>
 	</header>
 
-	<!-- Container for qn flexboxes -->
-	<div class="quizContainer">
+	<section onload="NextQuestion(0)" class="mainSection">
+		<main>
+			<!-- creating a modal (pop up) for when quiz ends -->
+			<div class="modalContainer" id="score-modal">
 
-		<!-- Flex method to layout quiz page -->
-		<div class="quizFlex">
+				<div class="modalContentContainer">
 
-			<article>
-				<h2 class="question">What does CPU stand for?</h2>
-				<div class="answers">
-					<ul>
-						<li>Central Processing Unit</li>
-						<li>Centre of Pain Universally</li>
-						<li>Cup Plant Under</li>
-						<li>Central Data Universe</li>
-					</ul>
+					<h1>Congratulations, Quiz Completed.</h1>
+
+					<!-- Details -->
+					<div class="scoreDetails">
+						<p>Wrong Answers : <span id="wrong-answers"></span></p>
+						<p>Right Answers : <span id="right-answers"></span></p>
+						<p>Score : <span id="grade-percentage"></span>%</p>
+						<p><span id="remarks"></span></p>
+					</div>
+
+					<!-- Button to restart quiz -->
+					<div class="resetbuttonModalContainer buttonModalContainer">
+						<button onclick="closeScoreModal()">RESET</button>
+					</div>
+
 				</div>
-			</article>
+			</div>
+
+			<!-- Container for qn -->
+			<div class="quizContainer">
+				<!-- Display game details -->
+				<div class="gameDetail">
+					<h1>Score : <span id="player-score"></span> / 5</h1>
+					<h1> Question : <span id="question-number"></span> / 5</h1>
+				</div>
+
+				<!-- Display question -->
+				<div class="qnContainer">
+					<h1 id="display-question"></h1>
+				</div>
+
+				<!-- For the game answers -->
+				<div class="answerContainer">
+					<!-- Create a modal for answers -->
+					<div class="modalContainer " id="answer-modal">
+						<!-- Create a modal -->
+						<div class="modalContentContainer">
+							<h1>Please Pick An Answer</h1>
+
+							<div class="hidebuttonModalContainer buttonModalContainer">
+								<button onclick="closeAnswerModal()">HIDE</button>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- First answer -->
+					<span>
+						<input type="radio" id="answer-one" name="answer" class="radio" value="answerA" />
+						<label for="answer-one" class="answer" id="answer-one-label"></label>
+					</span>
 
 
-		</div>
-	</div>
+					<!-- Second answer -->
+					<span>
+						<input type="radio" id="answer-two" name="answer" class="radio" value="answerB" />
+						<label for="answer-two" class="answer" id="answer-two-label"></label>
+					</span>
+
+					<!-- Third answer -->
+					<span>
+						<input type="radio" id="answer-three" name="answer" class="radio" value="answerC" />
+						<label for="answer-three" class="answer" id="answer-three-label"></label>
+					</span>
+
+					<!-- Fourth answer -->
+					<span>
+						<input type="radio" id="answer-fourth" name="answer" class="radio" value="answerD" />
+						<label for="answer-fourth" class="answer" id="answer-four-label"></label>
+					</span>
+				</div>
+
+
+				<!-- Next button -->
+
+				<div class="nextContainer">
+					<button onclick="handleNextQuestion()">Next</button>
+				</div>
+			</div>
+
+			
+		</main>
+	</section>
+
 
 	<!-- Bootstrap Footer -->
 	<!-- Creates footer element with bootstrap class to make it stick at bottom -->
@@ -76,6 +153,8 @@
 			</a>
 
 		</div>
+	
+
 	</footer>
 
 	<!-- Bootstrap link cont -->

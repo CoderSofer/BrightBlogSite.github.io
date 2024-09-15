@@ -1,11 +1,18 @@
+/* For reference, I used https://dev.to/sulaimonolaniran/building-a-simple-quiz-with-html-css-and-javascript-4elp a lot to help with the layout and function of the quiz */
+
 /* GENERAL */
+
 
 /* IMPORTING CUSTOM FONT VIRGIL */
 @font-face {
-    font-family: 'virgil'; /* Give font a name */
-    src: url('Virgil.woff2') format('woff2'); /* Path to your WOFF file */
-    font-weight: normal; /* Specify font weight */
-    font-style: normal; /* Specify font style */
+	font-family: 'virgil';
+	/* Give font a name */
+	src: url('Virgil.woff2') format('woff2');
+	/* Path to your WOFF file */
+	font-weight: normal;
+	/* Specify font weight */
+	font-style: normal;
+	/* Specify font style */
 }
 
 /* For all footers basic design */
@@ -24,8 +31,8 @@
 }
 
 /* Making background colour for all pages */
-.bodyClass{
-	background-color: #1F3B4D	;
+.bodyClass {
+	background-color: #1F3B4D;
 	font-family: 'virgil', sans-serif;
 	font-size: 2.5vw;
 	margin: 0;
@@ -46,25 +53,27 @@
 .mainTitle {
 	/* Make part of grid */
 	grid-area: mainTitle;
-	font-size: clamp(80px, 12vw, 170px);
-	padding-bottom: 0px;
+	font-size: clamp(60px, 12vw, 170px);
+
 	/* Make it flexbox so it goes on two lines */
 	display: flex;
-	margin: 1%;
+	margin: 0% 0% 1% 0%;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	justify-content: center; /* Space out children */
-	height: clamp(1em, 12vw, 30em);; /* Full viewport height */
+	justify-content: center;
+	/* Space out children */
+	height: clamp(1em, 12vw, 30em);
 	justify-items: center;
 	padding-bottom: 10vh;
 	color: #D0FEFE;
+	padding: 0vh 0% 10vh 0%;
 
 }
 
 /* Title colour */
-.mainTitle>div{
+.mainTitle>div {
 	background-color: #017374;
-	
+
 }
 
 
@@ -73,14 +82,18 @@
 	/* Make part of grid */
 	grid-area: horizontalLine;
 	background-color: #D0FEFE;
-	justify-items: stretch;
-	height: 8vh; /* Set height of the line */
-    width: 100%; /* Make it full width */
-    margin: 20px 0;
-	padding-bottom: 10vh;
+	height: 0px;
+	/* Set height of the line */
+	width: 100%;
+	/* Make it full width */
+	margin: 5vh 0% 5vh 0%;
+	;
+	padding: 10vh 0% 10vh 0%;
+	/* Make margins and padding outside of content */
+	box-sizing: content-box;
 }
 
-.lightCol{
+.lightCol {
 	background-color: #D0FEFE;
 }
 
@@ -89,26 +102,31 @@
 	/*Make part of grid  */
 	grid-area: startButton;
 	font-size: clamp(80px, 10vw, 360px);
+	padding: 1vh 0% 1vh 0%;
 }
 
 /* grid on index page */
-.indexGrid{
-	
+.indexGrid {
+
 	/* Make grid */
 	display: grid;
 	/* Format of grid */
 	grid-template-areas:
-	'mainTitle'
-	'horizontalLine'
-	'startButton';
+		'mainTitle'
+		'horizontalLine'
+		'startButton';
 	/* Make grid items horizontally centered */
 	justify-items: center;
 	/* Make sure padding is included in the total width and height of elements */
 	box-sizing: border-box;
-	align-items:center;
-	gap: 5px; /* Space between grid items */
-    width: 100%; /* Set width to 100% or specify a larger size */
-    height: auto; /* Adjust height as needed */
+	align-items: center;
+	gap: 5px;
+	/* Space between grid items */
+	width: 100%;
+	/* Set width to 100% or specify a larger size */
+	height: auto;
+	/* Adjust height as needed */
+	overflow: auto;
 
 }
 
@@ -116,32 +134,36 @@
 .indexContainer {
 	/* Turn into flexbox */
 	display: flex;
-	flex-direction: column; /* Stack children vertically */
-	justify-content: space-between; /* Space out children */
-	height: 100vh; /* Full viewport height */
+	flex-direction: column;
+	/* Stack children vertically */
+	justify-content: space-between;
+	/* Space out children */
+	height: 100vh;
+	/* Full viewport height */
+
 }
 
 
 /* QUIZPAGE */
 
 /* NAVIGATION */
-.navBar{
+.navBar {
 	background-color: #017374;
 	font-size: 2.5vw;
 	color: #D0FEFE;
 }
 
-.navText{
+.navText {
 	color: #D0FEFE;
 	text-decoration: none;
 	font-size: 2.5vw;
 }
 
-/* Under nav */
-.headyline{
-	height: 1vh; 
-    width: 100%; 
-    margin-bottom: 2vh;
+/* Under nav decoration*/
+.headyline {
+	height: 1vh;
+	width: 100%;
+	margin-bottom: 2vh;
 	padding-bottom: 2vh;
 	padding-top: 0;
 	background-color: #D0FEFE;
@@ -149,12 +171,362 @@
 
 }
 
-/* Quiz blocks */
 
-.quizFlex{
+/* Styling for the quiz area */
+.mainSection {
+	width: 100%;
+	min-height: 100vh;
+	/* Make a flexbox */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #1F3B4D;
+	padding-bottom: 30vh;
+
+}
+
+/* Quiz container decoration */
+.quizContainer {
+	width: 80vw;
+	height: 80vh;
+	background-color: #D0FEFE;
+	/* Make flexbox */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 30px;
+
+
+}
+
+/* Game details decoration */
+.gameDetail {
+	width: 80%;
+	height: 4rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+/* Change size of game detail's text */
+.gameDetail h1 {
+	font-size: 1.2rem;
+}
+
+/* Styling the qn */
+.qnContainer {
+	width: 80%;
+	height: 8rem;
 	display: flex;
 	align-items: center;
-	align-content:center;
-	height: 100vh;
 	justify-content: center;
+	border: 2px solid darkgray;
+	border-radius: 25px;
+}
+
+/* Text of qn */
+.qnContainer h1 {
+	text-align: center;
+	padding: 3px;
+	font-size: 0.9rem;
+}
+
+/* Styling the answers */
+.answerContainer {
+	width: 80%;
+	height: 12rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/* For each answer */
+
+.answerContainer span {
+	width: 45%;
+	height: 3rem;
+	border: 2px solid darkgray;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+/* Each answer's label */
+span label {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	color: rgb(22, 22, 22);
+}
+
+
+
+/* Fixing the colour issue for the inputs */
+input[type="radio"] {
+	position: relative;
+	display: none;
+}
+
+/* Change colour when it's selected */
+input[type=radio]:checked~.answer {
+	background: rgb(182, 175, 238);
+}
+
+/* Styling the next button */
+.nextContainer {
+	width: 50%;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+}
+
+/* Overriding the default button style */
+.nextContainer button {
+	width: 8rem;
+	height: 2rem;
+	border-radius: 10px;
+	background: none;
+	color: rgb(25, 25, 25);
+	font-weight: 600;
+	border: 2px solid gray;
+}
+
+/* Make the button glow when hovered over */
+.nextContainer button:hover {
+	background-color: rgb(143, 93, 93);
+}
+
+/* Make the modal infos display as a pop up at the end */
+.modalContainer {
+	display: none;
+	position: fixed;
+	/* Make this section appear over the normal page */
+	z-index: 1;
+	/* Position the box */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/* Dealing with autoflow */
+	overflow: auto;
+	/* Make background translucent */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Layout stuff */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* Make the end results fade in */
+	-webkit-animation: fadeIn 1.2s ease-in-out;
+	animation: fadeIn 1.2s ease-in-out;
+
+
+}
+
+/* Display of the content box */
+.modalContentContainer {
+	height: 20rem;
+	width: 25rem;
+	background-color: #017374;
+	/* Flexbox */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 25px;
+
+}
+
+/* Text of content box */
+.modalContentContainer h1 {
+	font-size: 1.3rem;
+	height: 3rem;
+	color: #D0FEFE;
+	text-align: center;
+}
+
+/* Display of score details */
+.scoreDetails {
+	width: 15rem;
+	height: 10rem;
+	/* Flexbox */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/* Text of score details */
+.scoreDetails p {
+	color: white;
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+/* Formatting the button conainers */
+.buttonModalContainer {
+	height: 2rem;
+	width: 100%;
+	/* Flexbox */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Reformatting the actual button */
+.buttonModalContainer button {
+	width: 10rem;
+	height: 2rem;
+	background: none;
+	outline: none;
+	font-size: 1.1rem;
+	border-radius: 20px;
+}
+
+/* When buttons are hovered over */
+.buttonModalContainer button:hover {
+	background-color: rgb(83, 82, 82);
+}
+
+
+/* Specific colours */
+/* For the hide button */
+.hidebuttonModalContainer button {
+
+	border: 1px solid #1F3B4D;
+	color: #1F3B4D;
+
+
+}
+
+/* For the reset button */
+.resetbuttonModalContainer button {
+	border: 1px solid rgb(252, 242, 241);
+	color: white;
+}
+
+
+/* Formatting for different scrreen sizes */
+/* Super small screens */
+@media(min-width : 300px) and (max-width : 350px) {
+
+	.gameDetail h1 {
+		font-size: 0.8rem;
+	}
+
+	.qnContainer {
+		height: 6rem;
+	}
+
+	.qnContainer h1 {
+		font-size: 0.9rem;
+	}
+
+	.answerContainer span {
+		width: 90%;
+		height: 2.5rem;
+	}
+
+	.answerContainer span label {
+		font-size: 0.8rem;
+	}
+
+	.modalContentContainer {
+		width: 90%;
+		height: 25rem;
+	}
+
+
+	.modalContentContainer h1,
+	.nextContainer button {
+		font-size: 1.2rem;
+	}
+}
+
+/* Middle Screens */
+@media(min-width : 350px) and (max-width : 700px) {
+
+	.gameDetail h1 {
+		font-size: 1rem;
+	}
+
+	.qnContainer {
+		height: 8rem;
+	}
+
+	.qnContainer h1 {
+		font-size: 1rem;
+	}
+
+	.answerContainer span {
+		width: 90%;
+	}
+
+	.modalContentContainer {
+		width: 90%;
+		height: 25rem;
+	}
+
+	.modalContentContainer h1,
+	.nextContainer button {
+		font-size: 1.2rem;
+	}
+}
+
+/* Large screens */
+@media(min-width : 700px) {
+
+	.gameDetail h1 {
+		font-size: 1.2rem;
+	}
+
+	.qnContainer {
+		height: 10rem;
+	}
+
+	.qnContainer h1 {
+		font-size: 1.2rem;
+	}
+
+	.answerContainer span {
+		width: 90%;
+	}
+
+	.modalContentContainer {
+		width: 90%;
+		height: 25rem;
+	}
+
+	.modalContentContainer h1,
+	.nextContainer button {
+		font-size: 1.2rem;
+	}
+}
+
+
+/* For the fade in animation */
+/* Changing opacity */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
